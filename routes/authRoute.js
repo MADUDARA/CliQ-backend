@@ -40,14 +40,14 @@ router.post("/cart/applycoupon", authMiddleware, applyCoupon);
 router.post("/cart/cash-order", authMiddleware, createOrder);
 router.get("/all-users", getallUser);
 router.get("/get-orders", authMiddleware, getOrders);
-router.get("/getallorders", authMiddleware, isAdmin, getAllOrders);
+router.get("/getallorders", authMiddleware, /*isAdmin,*/ getAllOrders);
 router.post("/getorderbyuser/:id", authMiddleware, isAdmin, getAllOrders);
 router.get("/refresh", handleRefreshToken);
 router.get("/logout", logout);
 router.get("/wishlist", authMiddleware, getWishlist);
 router.get("/cart", authMiddleware, getUserCart);
 
-router.get("/:id", authMiddleware, isAdmin, getaUser);
+router.get("/:id", authMiddleware,isAdmin, getaUser);
 router.delete("/empty-cart", authMiddleware, emptyCart);
 router.delete("/:id", deleteaUser);
 router.put(
